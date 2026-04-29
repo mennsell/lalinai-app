@@ -132,7 +132,7 @@ new Chart(ctx, {
   }
 });
 
-// 6. Animasi Simulasi Live Data (Metric Angka Bergerak)
+// 6. Animasi Simulasi Live Data
 let titikVal = 23;
 setInterval(() => {
   const delta = Math.random() > 0.5 ? 1 : -1;
@@ -143,7 +143,7 @@ setInterval(() => {
   document.getElementById('kecepatan').innerHTML = kec + ' <span>km/h</span>';
 }, 4000);
 
-// Data kumpulan skenario AI (Bisa kamu tambah/ubah isinya)
+// --- 7. FUNGSI UNTUK MODAL AI DINAMIS ---
 const skenarioAI = [
   {
     ruas: "Jl. Sudirman (Kritis)",
@@ -167,26 +167,19 @@ const skenarioAI = [
     ruas: "Jl. Rasuna Said (Sedang)",
     sebab: "Terdapat genangan air setinggi 10cm di jalur lambat.",
     prediksi: "Arus lalu lintas akan kembali normal jika hujan mereda.",
-    tindakan: "Papan informasi digital (VMS) diubah untuk menampilkan peringatan kurangi kecepatan."
+    tindakan: "Papan informasi digital (VMS) diubah untuk peringatan kurangi kecepatan."
   }
 ];
 
-// Fungsi Buka Modal & Acak Data AI
 function bukaModal() {
-  // Pilih salah satu skenario secara acak dari data di atas
   const acak = skenarioAI[Math.floor(Math.random() * skenarioAI.length)];
-  
-  // Masukkan teks acak tersebut ke dalam HTML
   document.getElementById('modal-ruas').textContent = acak.ruas;
   document.getElementById('modal-sebab').textContent = acak.sebab;
   document.getElementById('modal-prediksi').textContent = acak.prediksi;
   document.getElementById('modal-tindakan').textContent = acak.tindakan;
-
-  // Munculkan jendelanya
   document.getElementById('aiModal').style.display = 'flex';
 }
 
-// Fungsi Tutup Modal
 function tutupModal() {
   document.getElementById('aiModal').style.display = 'none';
 }
