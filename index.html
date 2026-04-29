@@ -10,6 +10,20 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 </head>
+  <div id="aiModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Analisis Mendalam AI 🤖</h3>
+        <button onclick="tutupModal()" class="close-btn">✖</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>⚠️ Status Ruas:</strong> <span id="modal-ruas"></span></p>
+        <p><strong>🔍 Penyebab Utama:</strong> <span id="modal-sebab"></span></p>
+        <p><strong>⏱️ Prediksi AI:</strong> <span id="modal-prediksi"></span></p>
+        <p><strong>✅ Tindakan Diambil:</strong> <span id="modal-tindakan"></span></p>
+      </div>
+    </div>
+  </div>
 <body>
 
   <h2 class="sr-only">LALIN.AI — Dashboard Manajemen Kemacetan Kota Jakarta berbasis AI</h2>
