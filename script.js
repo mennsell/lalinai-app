@@ -142,3 +142,51 @@ setInterval(() => {
   const kec = Math.round(Math.random() * 4 + 16);
   document.getElementById('kecepatan').innerHTML = kec + ' <span>km/h</span>';
 }, 4000);
+
+// Data kumpulan skenario AI (Bisa kamu tambah/ubah isinya)
+const skenarioAI = [
+  {
+    ruas: "Jl. Sudirman (Kritis)",
+    sebab: "Penyempitan lajur di KM 4 akibat proyek galian bawah tanah.",
+    prediksi: "Antrean akan terurai otomatis pada pukul 19:45 WIB.",
+    tindakan: "Siklus lampu hijau di Simpang Gatot Subroto diperpanjang 20 detik."
+  },
+  {
+    ruas: "Jl. Thamrin (Padat)",
+    sebab: "Volume kendaraan pribadi meningkat 40% dari arah Monas.",
+    prediksi: "Kepadatan diprediksi menurun bertahap dalam 25 menit.",
+    tindakan: "Sistem merekomendasikan pengalihan arus ke Jl. Tanah Abang."
+  },
+  {
+    ruas: "Jl. Gatot Subroto (Kritis)",
+    sebab: "Kecelakaan ringan di lajur kanan dekat pintu tol masuk.",
+    prediksi: "Kemacetan diprediksi tertahan hingga evakuasi selesai (± 35 menit).",
+    tindakan: "Notifikasi darurat dikirim ke petugas patroli lapangan."
+  },
+  {
+    ruas: "Jl. Rasuna Said (Sedang)",
+    sebab: "Terdapat genangan air setinggi 10cm di jalur lambat.",
+    prediksi: "Arus lalu lintas akan kembali normal jika hujan mereda.",
+    tindakan: "Papan informasi digital (VMS) diubah untuk menampilkan peringatan kurangi kecepatan."
+  }
+];
+
+// Fungsi Buka Modal & Acak Data AI
+function bukaModal() {
+  // Pilih salah satu skenario secara acak dari data di atas
+  const acak = skenarioAI[Math.floor(Math.random() * skenarioAI.length)];
+  
+  // Masukkan teks acak tersebut ke dalam HTML
+  document.getElementById('modal-ruas').textContent = acak.ruas;
+  document.getElementById('modal-sebab').textContent = acak.sebab;
+  document.getElementById('modal-prediksi').textContent = acak.prediksi;
+  document.getElementById('modal-tindakan').textContent = acak.tindakan;
+
+  // Munculkan jendelanya
+  document.getElementById('aiModal').style.display = 'flex';
+}
+
+// Fungsi Tutup Modal
+function tutupModal() {
+  document.getElementById('aiModal').style.display = 'none';
+}
